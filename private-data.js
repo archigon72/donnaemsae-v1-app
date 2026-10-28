@@ -30,14 +30,14 @@ function showBox(msg){
  if(!document.body){document.addEventListener('DOMContentLoaded',function(){showBox(msg)},{once:true});return}
  if(!box){
   box=document.createElement('div');box.id='dnm-token-box';
-  box.setAttribute('style','position:fixed;inset:0;z-index:2147483647;background:rgba(20,30,25,.72);display:flex;align-items:center;justify-content:center;padding:16px;font-family:system-ui,sans-serif');
+  box.setAttribute('style','position:fixed;inset:0;z-index:2147483647;background:rgba(20,30,25,.72);display:flex;align-items:center;justify-content:center;padding:16px;font-family:system-ui,sans-serif;color-scheme:light');
   box.innerHTML='<form style="background:#fff;border-radius:14px;max-width:360px;width:100%;padding:20px;box-sizing:border-box;color:#1d2b22">'
   +'<h2 style="margin:0 0 8px;font-size:18px">데이터 열쇠 입력</h2>'
   +'<p style="margin:0 0 12px;font-size:14px;line-height:1.5">비공개 데이터를 읽으려면 GitHub 토큰이 필요해요. 이 탭에서만 쓰고, 탭을 닫으면 지워져요.</p>'
   +'<p data-msg style="margin:0 0 8px;font-size:13px;color:#b3261e"></p>'
-  +'<input data-tok type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…" style="width:100%;box-sizing:border-box;font-size:16px;padding:10px;border:1px solid #9aa;border-radius:8px">'
+  +'<input data-tok type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…" style="width:100%;box-sizing:border-box;font-size:16px;padding:10px;border:1px solid #9aa;border-radius:8px;background:#fff;color:#1d2b22">'
   +'<div style="display:flex;gap:8px;margin-top:12px"><button type="submit" style="flex:1;padding:10px;font-size:15px;border:0;border-radius:8px;background:#2f6b45;color:#fff">확인</button>'
-  +'<button type="button" data-del style="padding:10px;font-size:15px;border:1px solid #9aa;border-radius:8px;background:#fff">토큰 삭제</button></div></form>';
+  +'<button type="button" data-del style="padding:10px;font-size:15px;border:1px solid #9aa;border-radius:8px;background:#fff;color:#1d2b22">토큰 삭제</button></div></form>';
   box.querySelector('form').addEventListener('submit',function(e){e.preventDefault();var i=box.querySelector('[data-tok]'),v=i.value.trim();if(!v)return;i.value='';box.remove();box=null;writeTok(v)});
   box.querySelector('[data-del]').addEventListener('click',function(){box.querySelector('[data-tok]').value='';api.clear();box.querySelector('[data-msg]').textContent='토큰을 지웠어요.'});
  }
