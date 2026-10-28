@@ -31,7 +31,7 @@ function showBox(msg){
  if(!box){
   box=document.createElement('div');box.id='dnm-token-box';
   box.setAttribute('style','position:fixed;inset:0;z-index:2147483647;background:rgba(20,30,25,.72);display:flex;align-items:center;justify-content:center;padding:16px;font-family:system-ui,sans-serif;color-scheme:light');
-  box.innerHTML='<form style="background:#fff;border-radius:14px;max-width:360px;width:100%;padding:20px;box-sizing:border-box;color:#1d2b22">'
+  box.innerHTML='<style>#dnm-token-box *{color:#1d2b22!important;-webkit-text-fill-color:#1d2b22!important;opacity:1!important;text-shadow:none!important;filter:none!important}#dnm-token-box [data-msg]{color:#b3261e!important;-webkit-text-fill-color:#b3261e!important}#dnm-token-box button[type=submit]{color:#fff!important;-webkit-text-fill-color:#fff!important}#dnm-token-box input::placeholder{color:#7a8a80!important;-webkit-text-fill-color:#7a8a80!important}</style><form style="background:#fff;border-radius:14px;max-width:360px;width:100%;padding:20px;box-sizing:border-box;color:#1d2b22">'
   +'<h2 style="margin:0 0 8px;font-size:18px">데이터 열쇠 입력</h2>'
   +'<p style="margin:0 0 12px;font-size:14px;line-height:1.5">비공개 데이터를 읽으려면 GitHub 토큰이 필요해요. 이 탭에서만 쓰고, 탭을 닫으면 지워져요.</p>'
   +'<p data-msg style="margin:0 0 8px;font-size:13px;color:#b3261e"></p>'
